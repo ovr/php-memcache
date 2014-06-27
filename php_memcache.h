@@ -63,6 +63,81 @@ PHP_FUNCTION(memcache_close);
 PHP_FUNCTION(memcache_flush);
 PHP_FUNCTION(memcache_setoptimeout);
 
+ZEND_BEGIN_ARG_INFO_EX(arginfo_memcache_connect, 0, 0, 2)
+	ZEND_ARG_INFO(0, host)
+	ZEND_ARG_INFO(0, port)
+	ZEND_ARG_INFO(0, timeout)
+ZEND_END_ARG_INFO()
+
+ZEND_BEGIN_ARG_INFO_EX(arginfo_memcache_pconnect, 0, 0, 2)
+	ZEND_ARG_INFO(0, host)
+	ZEND_ARG_INFO(0, port)
+	ZEND_ARG_INFO(0, timeout)
+ZEND_END_ARG_INFO()
+
+ZEND_BEGIN_ARG_INFO_EX(arginfo_memcache_add, 0, 0, 4)
+	ZEND_ARG_INFO(0, key)
+	ZEND_ARG_INFO(0, var)
+	ZEND_ARG_INFO(0, flag)
+	ZEND_ARG_INFO(0, expire)
+ZEND_END_ARG_INFO()
+
+ZEND_BEGIN_ARG_INFO_EX(arginfo_memcache_add_server, 0, 0, 2)
+	ZEND_ARG_INFO(0, host)
+	ZEND_ARG_INFO(0, port)
+	ZEND_ARG_INFO(0, persistent)
+	ZEND_ARG_INFO(0, weight)
+	ZEND_ARG_INFO(0, timeout)
+	ZEND_ARG_INFO(0, retry_interval)
+	ZEND_ARG_INFO(0, status)
+	ZEND_ARG_INFO(0, failure_callback)
+	ZEND_ARG_INFO(0, timeoutms)
+ZEND_END_ARG_INFO()
+
+ZEND_BEGIN_ARG_INFO_EX(arginfo_memcache_set, 0, 0, 2)
+	ZEND_ARG_INFO(0, key)
+	ZEND_ARG_INFO(0, var)
+	ZEND_ARG_INFO(0, flags)
+	ZEND_ARG_INFO(0, expire)
+ZEND_END_ARG_INFO()
+
+ZEND_BEGIN_ARG_INFO_EX(arginfo_memcache_replace, 0, 0, 2)
+	ZEND_ARG_INFO(0, key)
+	ZEND_ARG_INFO(0, var)
+	ZEND_ARG_INFO(0, flags)
+	ZEND_ARG_INFO(0, expire)
+ZEND_END_ARG_INFO()
+
+ZEND_BEGIN_ARG_INFO_EX(arginfo_memcache_get, 0, 0, 1)
+	ZEND_ARG_INFO(0, key)
+	ZEND_ARG_INFO(0, flags)
+ZEND_END_ARG_INFO()
+
+ZEND_BEGIN_ARG_INFO_EX(arginfo_memcache_delete, 0, 0, 1)
+	ZEND_ARG_INFO(0, key)
+	ZEND_ARG_INFO(0, timeout)
+ZEND_END_ARG_INFO()
+
+ZEND_BEGIN_ARG_INFO_EX(arginfo_memcache_get_stats, 0, 0, 0)
+	ZEND_ARG_INFO(0, type)
+	ZEND_ARG_INFO(0, slabid)
+	ZEND_ARG_INFO(0, limit)
+ZEND_END_ARG_INFO()
+
+ZEND_BEGIN_ARG_INFO_EX(arginfo_memcache_increment, 0, 0, 1)
+	ZEND_ARG_INFO(0, key)
+	ZEND_ARG_INFO(0, value)
+ZEND_END_ARG_INFO()
+
+ZEND_BEGIN_ARG_INFO_EX(arginfo_memcache_decrement, 0, 0, 1)
+	ZEND_ARG_INFO(0, key)
+	ZEND_ARG_INFO(0, value)
+ZEND_END_ARG_INFO()
+
+ZEND_BEGIN_ARG_INFO_EX(arginfo_memcache_setoptimeout, 0, 0, 1)
+	ZEND_ARG_INFO(0, timeoutms)
+ZEND_END_ARG_INFO()
+
 #define PHP_MEMCACHE_VERSION "2.2.7"
 
 #define MMC_BUF_SIZE 4096
